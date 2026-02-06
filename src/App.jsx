@@ -20,6 +20,26 @@ function App() {
     
     return () => clearInterval(timer);
   }, []);
+  useEffect(() => {
+  const petals = document.querySelector(".petals");
+
+  const interval = setInterval(() => {
+    const petal = document.createElement("span");
+
+    petal.style.left = Math.random() * window.innerWidth + "px";
+    petal.style.animationDuration = 6 + Math.random() * 4 + "s";
+
+    petals.appendChild(petal);
+
+    setTimeout(() => {
+      petal.remove();
+    }, 10000);
+
+  }, 300);
+
+  return () => clearInterval(interval);
+}, []);
+
   const audioRef = useRef(null);
 const [playing, setPlaying] = useState(false);
 
@@ -34,6 +54,7 @@ const toggleMusic = () => {
 
   return (
     <>
+    <div className="petals"></div>
       <section className="hero">
         <h1>NICOLE & ARIEL</h1>
         <p>18 de Abril 2026</p>
@@ -62,13 +83,18 @@ const toggleMusic = () => {
         </div>
       </section>
       <section className="section">
-  <h2>Ceremonia</h2>
-  <p>Iglesia San José</p>
-  <p>18:00 hs</p>
-
+  <h2>Ceremonia Civil</h2>
+  <p>16 de Abril 2026</p>
+  <p>Juzgado de paz, Sarmiento 53, Tafi Viejo, Tucumán</p>
+  <p>10:00 hs</p>
+  <h2>Conferencia Biblica</h2>
+  <p>18 de Abril 2026</p>
+  <p>Av. Peru Norte 349, Salon del Reino de los Testigos de Jehova, Tafi Viejo, Tucumán</p>
+  <p>10:00 hs</p>
   <h2 style={{ marginTop: "40px" }}>Fiesta</h2>
-  <p>Salón Los Álamos</p>
-  <p>20:30 hs</p>
+  <p>18 de Abril 2026</p>
+  <p>Salón La Casa de Manolo</p>
+  <p>12:30 hs</p>
 </section>
 <section className="section">
   <h2>Nuestros Momentos</h2>
