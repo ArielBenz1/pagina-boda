@@ -1,64 +1,106 @@
-import { useRef, useState } from "react";
+import { useEffect, useState, useRef } from "react";
+import "./App.css";
 
 function App() {
-  const audioRef = useRef(null);
-  const [playing, setPlaying] = useState(false);
+  const weddingDate = new Date("2026-04-18T00:00:00");
+  const [timeLeft, setTimeLeft] = useState({});
 
-  const toggleMusic = () => {
-    if (!playing) {
-      audioRef.current.play();
-    } else {
-      audioRef.current.pause();
-    }
-    setPlaying(!playing);
-  };
+  useEffect(() => {
+    const timer = setInterval(() => {
+      const now = new Date();
+      const diff = weddingDate - now;
+
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+      const minutes = Math.floor((diff / 1000 / 60) % 60);
+      const seconds = Math.floor((diff / 1000) % 60);
+
+      setTimeLeft({ days, hours, minutes, seconds });
+    }, 1000);
+    
+    return () => clearInterval(timer);
+  }, []);
+  const audioRef = useRef(null);
+const [playing, setPlaying] = useState(false);
+
+const toggleMusic = () => {
+  if (playing) {
+    audioRef.current.pause();
+  } else {
+    audioRef.current.play();
+  }
+  setPlaying(!playing);
+};
 
   return (
-    <div>
+    <>
+      <section className="hero">
+        <h1>NICOLE & ARIEL</h1>
+        <p>18 de Abril 2026</p>
+        <span>¡Nos casamos!</span>
 
-      <audio ref={audioRef} src="/cancion.mp3" />
+        <div className="countdown">
+          <div>
+            <strong>{timeLeft.days}</strong>
+            <small>Días</small>
+          </div>
 
-      {/* Botón flotante */}
-      <button
-        onClick={toggleMusic}
-        style={{
-          position: "fixed",
-          bottom: 20,
-          right: 20,
-          padding: 15,
-          borderRadius: "50%",
-          fontSize: 16
-        }}
-      >
-        {playing ? "⏸" : "▶"}
-      </button>
+          <div>
+            <strong>{timeLeft.hours}</strong>
+            <small>Horas</small>
+          </div>
 
-      {/* Sección 1 */}
-      <section style={sectionStyle}>
-        <h1>Bienvenidos</h1>
-        <p>Esta es nuestra página.</p>
+          <div>
+            <strong>{timeLeft.minutes}</strong>
+            <small>Min</small>
+          </div>
+
+          <div>
+            <strong>{timeLeft.seconds}</strong>
+            <small>Seg</small>
+          </div>
+        </div>
       </section>
+      <section className="section">
+  <h2>Ceremonia</h2>
+  <p>Iglesia San José</p>
+  <p>18:00 hs</p>
 
-      {/* Sección 2 */}
-      <section style={sectionStyle}>
-        <h2>Nuestra historia</h2>
-        <p>Acá va tu texto.</p>
-      </section>
+  <h2 style={{ marginTop: "40px" }}>Fiesta</h2>
+  <p>Salón Los Álamos</p>
+  <p>20:30 hs</p>
+</section>
+<section className="section">
+  <h2>Nuestros Momentos</h2>
 
-      {/* Sección 3 */}
-      <section style={sectionStyle}>
-        <h2>Fotos</h2>
-        <img src="/foto1.jpg" style={{ width: "100%" }} />
-      </section>
+  <div className="gallery">
+    <img src="/foto1.jpeg" />
+    <img src="/foto2.jpeg" />
+    <img src="/foto3.jpeg" />
+  </div>
+</section>
 
-    </div>
+<section className="section">
+  <h2>Te esperamos</h2>
+  <a
+  href="https://wa.me/5493814434964?text=Hola!%20Confirmo%20mi%20asistencia%20a%20la%20boda%20💍"
+  target="_blank"
+  className="confirm"
+>
+  Confirmar asistencia
+</a>
+
+  <p>Gracias por acompañarnos en este día tan especial</p>
+</section>
+
+<audio ref={audioRef} src="/cancion.mp3" />
+
+<button className="music" onClick={toggleMusic}>
+  {playing ? "❚❚" : "▶"}
+</button>
+
+    </>
   );
 }
-
-const sectionStyle = {
-  minHeight: "100vh",
-  padding: 30,
-  boxSizing: "border-box"
-};
 
 export default App;
