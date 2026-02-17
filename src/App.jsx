@@ -143,9 +143,16 @@ const prev = () =>
         </div>
       </section>
       <section>
-        <div>
-          <h1>TEXTO biblico</h1>
-        </div>
+
+      <div className="verse">
+  <p className="verse-text">
+    “Por lo tanto, lo que Dios ha unido, que no lo separe ningún hombre.”
+  </p>
+
+  <span className="verse-ref">
+    Mateo 19:6
+  </span>
+</div>
       </section>
       <section className="section">
   <h2>Ceremonia Civil</h2>
@@ -186,9 +193,13 @@ const prev = () =>
 
   <p><IconClock />12:00 hs</p>
 </section>
-<section className="section">
-  <h2>Nuestros Momentos</h2>
 
+<section className="section">
+  
+  <h2>Nuestros Momentos</h2>
+  <div>
+    <img src="/camara.gif" class="camara-icon"/>
+  </div>
   <div className="slider">
 
   <div
@@ -216,7 +227,37 @@ const prev = () =>
 
 </div>
 
+</section>
+<section class="fiesta">
+  <div class="fiesta-separador">
+    <img src="separador.png" class="separador-img"/>
+  </div>
 
+  <h2>La Fiesta</h2>
+<div class="disco">
+  <img src="disco.gif" class="disco-icon"/>
+</div>
+
+  <p class="fiesta-sub">
+    Hagamos juntos una noche inolvidable...
+  </p>
+
+  <h4>Detalles a tener en cuenta:</h4>
+
+  <div class="fiesta-grid">
+
+<div className="dresscode">
+  <h2>Dress Code</h2>
+
+  <div className="dress-card">
+    <img src="moño.png" alt="Dress code" />
+
+    <p className="dress-main">Formal Elegante</p>
+
+    <p className="dress-note">Mujeres: evitar color blanco o similares</p>
+  </div>
+</div>
+</div>
 
 </section>
 
