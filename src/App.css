@@ -5,7 +5,7 @@ html {
 body {
   margin: 0;
   font-family: "Playfair Display", serif;
-  background: linear-gradient(to bottom, #ffffff 60%, #f6d7d0 100%);
+  background: linear-gradient(to bottom, #ffffff 15%,#fff2ec 45%, hsl(11, 68%, 89%) 100%);
 }
 
 
@@ -148,6 +148,7 @@ body {
   background: transparent;
   position: relative;
   z-index: 2;
+  margin-top: -10px;
 }
 
 .section h2 {
@@ -163,6 +164,7 @@ body {
   gap: 8px;
   margin: 6px 0;
   color: #3d2b2b;
+  margin-top: 10px;
 }
 
 .section svg {
@@ -462,6 +464,7 @@ body {
 .dresscode {
   text-align: center;
   padding: 60px 20px;
+  padding-bottom: 25px;
 }
 
 .dresscode h2 {
@@ -472,10 +475,12 @@ body {
 }
 
 .dress-card {
-  background: #fdecea;
+  background: #ffeae7;
   border-radius: 30px;
   padding: 40px 30px;
-  box-shadow: 0 8px 25px rgba(0,0,0,.08);
+  box-shadow: 0 18px 25px rgba(0,0,0,.08);
+  margin-bottom: 20px;
+  border: 1px solid rgba(186, 174, 167, 0.25);
 }
 
 .dress-card img {

@@ -257,22 +257,41 @@ const prev = () =>
     <p className="dress-note">Mujeres: evitar color blanco o similares</p>
   </div>
 </div>
+
 </div>
 
+<div className="dresscode">
+  <h2>Tarjeta</h2>
+
+  <div className="dress-card">
+    <img src="tarjeta.png" class="disco-icon"/>
+    <p className="dress-main">Nos haria muy felices que nos acompañes en este dia tan importante para nosotros. 
+      Estamos organizando esta celebracion con mucho amor y para hacerla posible, será con tarjeta.</p>
+  </div>
+</div>
 </section>
 
 <section className="section">
-  <h2>Te esperamos</h2>
+  <p className="verse-text">
+    CONFRIMAR ASISTENCIA HASTA EL 30 DE MARZO
+  </p>
   <a
   href="https://wa.me/5493814434964?text=Hola!%20Confirmo%20mi%20asistencia%20a%20la%20boda%20💍"
   target="_blank"
   className="confirm"
 >
-  Confirmar asistencia
+  CONFIRMAR AQUI
 </a>
-
-  <p>Gracias por acompañarnos en este día tan especial</p>
+    <p className="verse-text">
+    Fecha límite para realiar el aporte: 11 de Abril.
+  </p>
+  <p>(Te enviaremos los detalles del monto y la forma de pago por mensaje privado)</p>
 </section>
+  <section className="section">
+
+  <p className="verse-text">Gracias por acompañarnos en este día tan especial</p>
+  <h2>Te esperamos</h2>
+  </section>
 
 <audio ref={audioRef} src="/cancion.mp3" />
 
