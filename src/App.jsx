@@ -266,14 +266,14 @@ const prev = () =>
   <div className="dress-card">
     <img src="tarjeta.png" class="disco-icon"/>
     <p className="dress-main">Nos haria muy felices que nos acompañes en este dia tan importante para nosotros. 
-      Estamos organizando esta celebracion con mucho amor y para hacerla posible, será con tarjeta.</p>
+      Estamos organizando esta celebracion con mucho amor y para hacerla posible, agradeceriamos tu colaboracion con el valor de la tarjeta.</p>
   </div>
 </div>
 </section>
 
 <section className="section">
   <p className="verse-text">
-    CONFRIMAR ASISTENCIA HASTA EL 30 DE MARZO
+    CONFIRMAR ASISTENCIA HASTA EL 30 DE MARZO
   </p>
   <a
   href="https://wa.me/5493814434964?text=Hola!%20Confirmo%20mi%20asistencia%20a%20la%20boda%20💍"
@@ -283,7 +283,7 @@ const prev = () =>
   CONFIRMAR AQUI
 </a>
     <p className="verse-text">
-    Fecha límite para realiar el aporte: 11 de Abril.
+    Fecha límite para realizar el aporte: 11 de Abril.
   </p>
   <p>(Te enviaremos los detalles del monto y la forma de pago por mensaje privado)</p>
 </section>
